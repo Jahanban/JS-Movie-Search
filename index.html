@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
+    <link href="styles.css" rel="stylesheet">
+    <!-- libraries - handlebars and jquery and linked js file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>Movie APP</title>
+</head>
+<body>
+
+<div> 
+    <!-- Main image on top of the search page -->
+    <img id="banner" class="hero" src="assets/hero.png" alt="banner with hollywoof film posters">
+</div>
+    
+<section class="wrapper">
+    <h1>Type Movie Title And Hit Enter!</h1>
+    <form action="submit">
+            <input id="movieTitle" type="text">
+    </form>
+    
+    <!-- handlebars templating to compile and display title, poster, overview, release date and my recommendation based on average user vote score from TMDB -->
+    <ul style="list-style-type: none;"></ul>
+    <script id="data" type="text/x-handlebars-template">
+        <li class="container" id="{{id}}">
+            <div class="movie">
+                <h2>{{title}}</h2>
+                <img src="{{image}}" alt="movie-poster">
+                <p>{{overview}}</p>
+                <p>Release Date: {{releaseDate}}</p>
+                <p id="recommendation"></p>
+            </div>     
+        </li>
+        <div>
+            <!-- button to scroll back to the top of the page and refresh the page for a new search -->
+            <a href="#banner" onclick="reloadPage();">^</a>
+        </div>
+    </script>
+        
+</section>
+<!-- libraries - handlebars and jquery and linked js file -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="script.js"></script> -->
+</body>
+</html>
+
